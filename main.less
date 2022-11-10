@@ -19,6 +19,7 @@ h6 {
 	color: @text-color;
 	text-align: center;
 	font-weight: 100;
+	margin: 0;
 }
 
 #hero {
@@ -38,23 +39,47 @@ h6 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 
 	#message {
-		font-size: 70px;
+		@media only screen and (min-height: 768px) {
+			font-size: 70px;
+		}
+
+		@media only screen and (max-width: 768px) {
+			font-size: 50px;
+		}
 	}
 }
 
 #banner {
-	margin-top: 100px;
+	// margin-top: 10%;
+	max-width: 80%;
+	@media only screen and (max-height: 768px) {
+		max-height: 30%;
+	}
 }
 
 #contact {
-	margin-bottom: 50px;
-
+	h1 {
+		@media only screen and (max-height: 768px) {
+			font-size: 24px;
+		}
+	}
+	
+	// margin-bottom: 50px;
 	p {
 		color: @text-color;
 		font-size: 24px;
+		margin: 12px;
+
+		@media only screen and (max-width: 768px) {
+			font-size: 18px;
+		}
+
+		@media only screen and (max-height: 768px) {
+			font-size: 16px;
+		}
 
 		i {
 			margin-right: 20px;
@@ -71,6 +96,10 @@ h6 {
 		height: 1px !important;
 		background-color: @text-color;
 		width: 100px;
-		height: 0px;
+		margin: 30px auto;
+
+		@media only screen and (max-height: 768px) {
+			margin: 20px auto;
+		}
 	}
 }
